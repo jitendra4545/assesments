@@ -1,29 +1,23 @@
 import React,{useEffect, useState} from 'react'
 import { CustomerTable } from './CustomerTable'
-import axios from 'axios'
+
 import { useDispatch, useSelector } from 'react-redux'
-import { getCustomerFailure, getCustomerPending, getCustomerSuccess } from '../redux/action'
+
 import { Link } from 'react-router-dom'
+import { GET_CUSTOMER_FAILURE } from '../redux/actionTypes'
+import { getCustomer } from '../redux/action'
 export const Customer = () => {
 
     // const [customer, setcustomer] = useState([])
-    const {customer,isLoading}=useSelector(store=>store )
+    const {customer,isLoading}=useSelector(store=>store.reducer )
     const dispatch=useDispatch()
 
-    const getCustomer=async()=>{
-        dispatch(getCustomerPending())
-        axios.get(`http://localhost:8000/invoice/customer`)
-        .then((res)=>{
-            console.log(res.data)
-        dispatch(getCustomerSuccess(res.data))
-        }).catch((err)=>{
-            console.log(err)
-            dispatch(getCustomerFailure())
-        })
-    }
-    
+
+
+
+
     useEffect(()=>{
-         getCustomer()
+      dispatch(getCustomer())
     },[])
 
 console.log(customer)
@@ -56,7 +50,26 @@ if(isLoading){
                     </div>
                 </div>
                 {
-                    customer? <CustomerTable/>: <div class="bg-slate-300 w-3/3 h-64 rounded-lg  mt-3" >
+                    customer.length>0? 
+                    <table class="table-auto w-full m-auto text-left mt-3  ">
+                    <thead class='bg-slate-200  ' >
+                      <tr  >
+                        <th class='px-3 py-3' >Name</th>
+                        <th >Phone</th>
+                        <th>Date Added</th>
+                        <th >Last Transaction</th>
+                        <th >Action</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                        {isLoading&& <h1>Loading...</h1>}
+                        {customer.map((el)=>{
+                            return <CustomerTable {...el} />
+                        })} 
+                    </tbody>
+                  </table>
+                    
+                    : <div class="bg-slate-300 w-3/3 h-64 rounded-lg  mt-3" >
                         <div class="flex flex-col items-center justify-center" >
                             <p class="text-3xl mt-16 " >You Have No Customers....</p>
                         </div>
