@@ -1,4 +1,4 @@
-import { DELETE_CUSTOMER_FAILURE, DELETE_CUSTOMER_PENDING, DELETE_CUSTOMER_SUCCESS, DELETE_SUPPLIER_SUCCESS, GET_CUSTOMER_FAILURE, GET_CUSTOMER_PENDING, GET_CUSTOMER_SUCCESS, GET_SUPPLIER_SUCCESS, POST_CUSTOMER_FAILURE, POST_CUSTOMER_PENDING, POST_CUSTOMER_SUCCESS, POST_SUPPLIER_SUCCESS } from "./actionTypes"
+import { DELETE_CUSTOMER_FAILURE, DELETE_CUSTOMER_PENDING, DELETE_CUSTOMER_SUCCESS, DELETE_SUPPLIER_SUCCESS, GET_CUSTOMER_FAILURE, GET_CUSTOMER_PENDING, GET_CUSTOMER_SUCCESS, GET_ITEM_SUCCESS, GET_SUPPLIER_SUCCESS, POST_CUSTOMER_FAILURE, POST_CUSTOMER_PENDING, POST_CUSTOMER_SUCCESS, POST_ITEM_SUCCESS, POST_SUPPLIER_SUCCESS } from "./actionTypes"
 
 
 
@@ -72,6 +72,20 @@ console.log(payload)
             ...state,supplier:newData,isLoading:false,isError:false
         }
     }
+
+    case GET_ITEM_SUCCESS:{
+        return {
+            ...state,item:payload,isLoading:false,isError:false
+        }
+    }
+
+    case POST_ITEM_SUCCESS:{
+        return {
+            ...state,isLoading:false,isError:false
+        }
+    }
+
+
     default:
         return state
    }

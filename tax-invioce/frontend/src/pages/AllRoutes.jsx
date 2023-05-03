@@ -9,6 +9,7 @@ import { Purchase } from '../components/Purchase'
 import { CustomerInput } from '../components/CustomerInput'
 import { SupplierInput } from '../components/SupplierInput'
 import { Supplier } from '../components/Supplier'
+import { ItemInput } from '../components/ItemInput'
 
 export const AllRoutes = () => {
   return (
@@ -19,6 +20,7 @@ export const AllRoutes = () => {
       <Route path="/supplier" element={<Supplier/>} />
       <Route path='/supplier/add' element={<SupplierInput/>} />
       <Route path="/items" element={<Items/>} />
+      <Route path="/item/add" element={<ItemInput/>} />
       <Route path="/sales" element={<Sales/>} />
       <Route path="/purchase" element={<Purchase/>} />
     </Routes>
