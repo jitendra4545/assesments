@@ -1,4 +1,4 @@
-import { DELETE_CUSTOMER_FAILURE, DELETE_CUSTOMER_PENDING, DELETE_CUSTOMER_SUCCESS, GET_CUSTOMER_FAILURE, GET_CUSTOMER_PENDING, GET_CUSTOMER_SUCCESS, POST_CUSTOMER_FAILURE, POST_CUSTOMER_PENDING, POST_CUSTOMER_SUCCESS } from "./actionTypes"
+import { DELETE_CUSTOMER_FAILURE, DELETE_CUSTOMER_PENDING, DELETE_CUSTOMER_SUCCESS, DELETE_SUPPLIER_SUCCESS, GET_CUSTOMER_FAILURE, GET_CUSTOMER_PENDING, GET_CUSTOMER_SUCCESS, GET_SUPPLIER_SUCCESS, POST_CUSTOMER_FAILURE, POST_CUSTOMER_PENDING, POST_CUSTOMER_SUCCESS, POST_SUPPLIER_SUCCESS } from "./actionTypes"
 
 
 
@@ -55,17 +55,23 @@ console.log(payload)
             ...state,customer:newData,isLoading:false,isError:false
         }
     }
-    // case DELETE_CUSTOMER_PENDING:{
-    //         return {
-    //             ...state,isLoading:true,isError:false
-    //         }
-    // }
-    // case DELETE_CUSTOMER_FAILURE:{
-    //     return {
-    //         ...state,isLoading:false,isError:true
-    //     }
-    // }
+    case GET_SUPPLIER_SUCCESS:{
+        return {
+            ...state,supplier:payload,isLoading:false,isError:false
+        }
+    }
 
+    case POST_SUPPLIER_SUCCESS:{
+        return {
+            ...state,isLoading:false,isError:false
+        }
+    }
+    case DELETE_SUPPLIER_SUCCESS:{
+        let newData=supplier.map((el)=>el.id!=payload.id)
+        return {
+            ...state,supplier:newData,isLoading:false,isError:false
+        }
+    }
     default:
         return state
    }
