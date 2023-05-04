@@ -197,8 +197,8 @@ export const addItem=(ItemName,SellingPrice,PurchasePrice,Units,OpeningStock,Low
    
   return  axios.post(`http://localhost:8000/invoice/item/add`,payload)
     .then((res)=>{
-        console.log(res.data)
-        dispatch(postItemSuccess())
+        console.log("item",res.data)
+        dispatch(postItemSuccess(res.data))
     }).catch((err)=>{
 console.log(err)
 

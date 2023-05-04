@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { getItem } from '../redux/action'
+import { ItemTable } from './ItemTable'
 
 export const Items = () => {
   const {item,isLoading}=useSelector(store=>store.reducer )
   const dispatch=useDispatch()
-console.log(item)
+
+useEffect(()=>{
+ dispatch(getItem())
+},[])
+
+  console.log(item)
+
+
+
 
   return ( <div class='p-4' >
 
@@ -35,19 +45,17 @@ console.log(item)
       {
           item.length>0? 
           <table class="table-auto w-full m-auto text-left mt-3  ">
-          <thead class='bg-slate-200  ' >
+          <thead class='bg-slate-200   ' >
             <tr  >
-              <th class='px-3 py-3' >Name</th>
-              <th >Phone</th>
-              <th>Date Added</th>
-              <th >Last Transaction</th>
-              <th >Action</th>
+              <th class='px-3 py-3' >Item Name</th>
+              <th  >Selling Price</th>
+              <th >Stock Qty</th>
             </tr>
           </thead>
           <tbody>
-              {/* {item.map((el)=>{
-                  return <CustomerTable {...el} />
-              })}  */}
+              {item.map((el)=>{
+                  return <ItemTable {...el} />
+              })} 
           </tbody>
         </table>
           
