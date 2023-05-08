@@ -4,7 +4,7 @@ export const ItemInput = () => {
     const [GSTIN,setGSTIN]=useState("")
     const [PartyName,setPartyName]=useState("")
     const [PhoneNo, setPhone] = useState("")
-    const [Address, setAddress] = useState("")
+     const [Address, setAddress] = useState("")
 
     const handleForm=()=>{
 
