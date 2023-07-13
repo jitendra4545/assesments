@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const addUser = createAsyncThunk("addUser", async (payload) => {
 
-    const res = await fetch("http://localhost:8100/users",
+    const res = await fetch("https://fair-gray-angelfish-sari.cyclic.app/users",
         {
             method: "POST",
             headers: {
@@ -23,7 +23,7 @@ export const getUserData = createAsyncThunk(
     "getUsers",
     async () => {
         try {
-            const res = await fetch("http://localhost:8100/users");
+            const res = await fetch("https://fair-gray-angelfish-sari.cyclic.app/users");
             const result = await res.json();
             console.log("res", result)
             return result;
@@ -36,7 +36,7 @@ export const getUserData = createAsyncThunk(
 
 export const getSingleUser = createAsyncThunk("singleUser", async (id) => {
     try {
-        const res = await fetch(`http://localhost:8100/users/${id}`)
+        const res = await fetch(`https://fair-gray-angelfish-sari.cyclic.app/users/${id}`)
         let result = await res.json()
 
         console.log(result)
@@ -47,25 +47,13 @@ export const getSingleUser = createAsyncThunk("singleUser", async (id) => {
 })
 
 
-// export const deleteUser=createAsyncThunk("deleteuser",async(id)=>{
-//     try{
-//       const res=await fetch(`http://localhost:8100/users/delete/${id}`,{
-//         method:"DELETE"
-//       })
-//       const result=await res.json()
-//       console.log(result)
-//       return result
-//     }catch(err){
-// return err
-//     }
-// })
 
 export const deleteUser = createAsyncThunk(
     "deleteUser",
     async ({id}) => {
         try {
             const res = await fetch(
-                `http://localhost:8100/users/${id}`,
+                `https://fair-gray-angelfish-sari.cyclic.app/users/${id}`,
                 {
                     method: "DELETE",
                 }
@@ -87,7 +75,7 @@ export const updateUser = createAsyncThunk(
         console.log("data", id, name, email, phone)
         try {
             const res = await fetch(
-                `http://localhost:8100/users/${id}`,
+                `https://fair-gray-angelfish-sari.cyclic.app/users/${id}`,
                 {
                     method: "PUT",
                     headers: {

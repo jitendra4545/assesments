@@ -55,8 +55,8 @@ const handleUpdate=()=>{
     }
 
     return (
-        <div style={{backgroundColor:"skyblue",height:"100vh"}} >
-            <div style={{ display: 'grid', width: "30%",  margin: "auto",padding:"100px 50px",backgroundColor:"teal"}}  >
+        <div style={{backgroundColor:"pink",height:"100vh"}} >
+            <div style={{ display: 'grid', width: "30%",  margin: "auto",padding:"100px 50px",backgroundColor:"cyan"}}  >
                 <input style={{padding:"10px",border:"1px solid black",marginBottom:"5px"}} placeholder='enter name' value={name}  type="text"  onChange={(e)=>setname(e.target.value)} />
                 <input style={{padding:"10px",border:"1px solid black",marginBottom:"5px"}} placeholder='enter email' value={email} type="text" onChange={(e)=>setemail(e.target.value)} />
                 <input style={{padding:"10px",border:"1px solid black",marginBottom:"5px"}} placeholder='enter phone' value={phone} type="number"  onChange={(e)=>setphone(e.target.value)} />

@@ -51,7 +51,7 @@ dispatch(deleteUser({id}))
 
         <td style={{border:"1px solid"}}>{el._id}</td>
         <td style={{border:"1px solid"}}>{el.name}</td>
-       <td style={{border:"1px solid"}}> <Link to={`/singleuser/${el._id}`}>VIEW</Link></td>
+       <td  style={{border:"1px solid"}}  > <Link to={`/singleuser/${el._id}`}>VIEW</Link></td>
        <td  style={{border:"1px solid"}}>  <Link to={`/edit/${el._id}`}>EDIT</Link></td>
         <td style={{border:"1px solid"}} onClick={()=>handleDelete(el._id)}>DELETE</td>
     </tr>
