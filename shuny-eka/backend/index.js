@@ -36,7 +36,7 @@ app.get("/users/:id", async (req, res) => {
 
 })
 
-app.post("/adduser", async (req, res) => {
+app.post("/users", async (req, res) => {
     const data = req.body
     console.log(data)
 
@@ -52,7 +52,7 @@ app.post("/adduser", async (req, res) => {
 })
 
 
-app.put("/users/update/:id", async (req, res) => {
+app.put("/users/:id", async (req, res) => {
     const data=req.body
     const id=req.params.id
     console.log(data,id)
@@ -67,11 +67,11 @@ res.send({"msg":"User data has been updated"})
 })
 
 
-app.delete("/users/delete/:id", async (req, res) => {
+app.delete("/users/:id", async (req, res) => {
     const id=req.params.id
     try { 
     let data=await UserModel.findOneAndDelete({"_id":id})
-    res.send({"msg":"User has been deleted"})
+    res.send({"msg":"User data has been updated"})
     } catch (err) {
         res.send({"msg":"somthing went wrong! cannot delete user ","error":err.message})
      }
