@@ -16,13 +16,13 @@ console.log(users)
 
   return (
     <div>
-        <table>
+        <table style={{border:"1px solid",width:"100%"}}>
     <thead>
  <tr>
    
-    <th>Name</th>
-    <th>EMAIL</th>
-    <th>PHONE</th>
+    <th style={{border:"1px solid"}}>Name</th>
+    <th style={{border:"1px solid"}}>EMAIL</th>
+    <th style={{border:"1px solid"}}>PHONE</th>
     
  </tr>
     </thead>
@@ -31,9 +31,9 @@ console.log(users)
 {
     users?.map((el)=>{
         return <tr>
-            <td>{el.name}</td>
-            <td>{el.email}</td>
-            <td>{el.phone}</td>
+            <td style={{border:"1px solid"}}>{el.name}</td>
+            <td style={{border:"1px solid"}}>{el.email}</td>
+            <td style={{border:"1px solid"}}>{el.phone}</td>
         </tr> 
     })
 }
