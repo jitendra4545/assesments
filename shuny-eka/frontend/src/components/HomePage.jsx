@@ -30,7 +30,7 @@ dispatch(deleteUser({id}))
 
       
   return (
-    <div>
+    <div style={{backgroundColor:"pink",height:"100vh"}} >
        
 <div>
 <table style={{border:"1px solid",width:'100%'}}>

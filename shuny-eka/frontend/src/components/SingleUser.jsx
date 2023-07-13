@@ -15,7 +15,7 @@ console.log(users)
 
 
   return (
-    <div>
+    <div style={{backgroundColor:"pink",height:"100vh"}}>
         <table style={{border:"1px solid",width:"100%"}}>
     <thead>
  <tr>
