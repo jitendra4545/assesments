@@ -60,7 +60,7 @@ const handleUpdate=()=>{
                 <input style={{padding:"10px",border:"1px solid black",marginBottom:"5px"}} placeholder='enter name' value={name}  type="text"  onChange={(e)=>setname(e.target.value)} />
                 <input style={{padding:"10px",border:"1px solid black",marginBottom:"5px"}} placeholder='enter email' value={email} type="text" onChange={(e)=>setemail(e.target.value)} />
                 <input style={{padding:"10px",border:"1px solid black",marginBottom:"5px"}} placeholder='enter phone' value={phone} type="number"  onChange={(e)=>setphone(e.target.value)} />
-                {id?<button style={{padding:"10px",marginBottom:"5px",backgroundColor:"blue",color:"white"}} onClick={handleUpdate}>Update</button>:<button style={{padding:"10px",marginBottom:"5px",backgroundColor:"blue",color:"white"}} onClick={handleAdd} >ADD</button>}
+                {id?<button style={{padding:"10px",marginBottom:"5px",backgroundColor:"blue",color:"white"}} onClick={handleUpdate}>UPDATE</button>:<button style={{padding:"10px",marginBottom:"5px",backgroundColor:"blue",color:"white"}} onClick={handleAdd} >CREATE</button>}
             </div>
         </div>
     )
