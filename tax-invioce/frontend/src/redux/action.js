@@ -51,7 +51,7 @@ const deleteCustomerSuccess=(payload)=>{
 
 export const getCustomer=()=>(dispatch)=>{
     dispatch(getCustomerPending())
-    axios.get(`http://localhost:8000/invoice/customer`)
+    axios.get(`https://turquoise-greyhound-hem.cyclic.app/invoice/customer`)
     .then((res)=>{
         console.log(res.data)
     dispatch(getCustomerSuccess(res.data))
@@ -70,7 +70,7 @@ export const addCustomer=(GSTIN,PartyName,PhoneNo,Address)=>(dispatch )=>{
         Address
     }      
     dispatch(postCustomerPending())
-  return  axios.post(`http://localhost:8000/invoice/customer/add`,payload)
+  return  axios.post(`https://turquoise-greyhound-hem.cyclic.app/invoice/customer/add`,payload)
     .then((res)=>{
         console.log(res.data)
         dispatch(postCustomerSuccess())
@@ -83,7 +83,7 @@ dispatch(postCustomerFailure())
 
 export const deleteCustomer=(id)=>(dispatch)=>{
 
-   return axios.delete(`http://localhost:8000/invoice/customer/delete/${id}`)
+   return axios.delete(`https://turquoise-greyhound-hem.cyclic.app/invoice/customer/delete/${id}`)
     .then((res)=>{
         dispatch(deleteCustomerSuccess(res.data))
     }).catch(err=>console.log(err))
@@ -114,7 +114,7 @@ const deleteSupplierSuccess=(payload)=>{
 
 export const getSupplier=()=>(dispatch)=>{
     
-    axios.get(`http://localhost:8000/invoice/supplier`)
+    axios.get(`https://turquoise-greyhound-hem.cyclic.app/invoice/supplier`)
     .then((res)=>{
         console.log(res.data)
     dispatch(getSupplierSuccess(res.data))
@@ -132,7 +132,7 @@ export const addSupplier=(GSTIN,PartyName,PhoneNo,Address)=>(dispatch )=>{
         Address
     }      
    
-  return  axios.post(`http://localhost:8000/invoice/supplier/add`,payload)
+  return  axios.post(`https://turquoise-greyhound-hem.cyclic.app/invoice/supplier/add`,payload)
     .then((res)=>{
         console.log(res.data)
         dispatch(postSupplierSuccess())
@@ -146,7 +146,7 @@ console.log(err)
 
 export const deleteSupplier=(id)=>(dispatch)=>{
 
-    return axios.delete(`http://localhost:8000/invoice/supplier/delete/${id}`)
+    return axios.delete(`https://turquoise-greyhound-hem.cyclic.app/invoice/supplier/delete/${id}`)
      .then((res)=>{
          dispatch(deleteSupplierSuccess(res.data))
      }).catch(err=>console.log(err))
@@ -171,7 +171,7 @@ const postItemSuccess=()=>{
 
 export const getItem=()=>(dispatch)=>{
     
-    axios.get(`http://localhost:8000/invoice/item`)
+    axios.get(`https://turquoise-greyhound-hem.cyclic.app/invoice/item`)
     .then((res)=>{
         console.log(res.data)
     dispatch(getItemSuccess(res.data))
@@ -195,7 +195,7 @@ export const addItem=(ItemName,SellingPrice,PurchasePrice,Units,OpeningStock,Low
        Description
     }      
    
-  return  axios.post(`http://localhost:8000/invoice/item/add`,payload)
+  return  axios.post(`https://turquoise-greyhound-hem.cyclic.app/invoice/item/add`,payload)
     .then((res)=>{
         console.log("item",res.data)
         dispatch(postItemSuccess(res.data))
