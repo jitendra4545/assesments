@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { CountryPage } from '../components/CountryPage'
+import { CountryPage } from './CountryPage'
 import { SingleCountry } from '../components/SingleCountry'
 
 export const AllRoutes = () => {

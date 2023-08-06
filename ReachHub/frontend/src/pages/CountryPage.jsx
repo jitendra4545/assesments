@@ -1,8 +1,8 @@
 import { Box, Button, Image, Input, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Navbar } from './Navbar'
-import CountryList from './CountryList'
+import { Navbar } from '../components/Navbar'
+import CountryList from '../components/CountryList'
 import {ArrowForwardIcon} from '@chakra-ui/icons'
 
 export const CountryPage = () => {
