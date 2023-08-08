@@ -23,6 +23,7 @@ alert('fill all the blanks')
           ]
 
           
+          
         try{
            let res= QRCode.toDataURL(opt, function (err, url) {
           
