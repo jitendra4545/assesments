@@ -48,8 +48,8 @@ export const HomePage = () => {
 
 
     useEffect(() => {
-        //  startRecord()
-        //   startWebcam()
+         startRecord()
+          startWebcam()
     }, [])
 
 
@@ -81,7 +81,7 @@ if(stream==null){
             setStream(null)
             setRecorder(null)
             settoggle(false)
-            // localStorage.setItem("video",JSON.stringify())
+             localStorage.setItem("video",JSON.stringify())
         }
     }
     return (

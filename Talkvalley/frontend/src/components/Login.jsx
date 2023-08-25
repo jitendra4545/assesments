@@ -15,7 +15,7 @@ export const Login = () => {
             email
         }
         // console.log(payload)
-        axios.post(`http://localhost:8110/adduser`, payload)
+        axios.post(`https://fair-gray-angelfish-sari.cyclic.app/adduser`, payload)
             .then((res) => {
                 console.log(res.data.token)
                 navigate("/")
