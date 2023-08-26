@@ -85,7 +85,7 @@ function Navbar() {
                 <HamburgerIcon />
               </MenuButton>
               <MenuList fontSize='20px' fontWeight={'bold'} backgroundColor={'blue'}>
-                <Link  to='/allposts' ><MenuItem _focus={{ background: 'blue', color: "white" }}  >Posts</MenuItem></Link>
+                <Link  to='/register' ><MenuItem _focus={{ background: 'blue', color: "white" }}  >Add New User</MenuItem></Link>
                 <Link to='/postanalytic'> <MenuItem _focus={{ background: 'blue', color: "white" }}>Post Annalytic</MenuItem></Link>
                 <Link to='/allusers'> <MenuItem _focus={{ background: 'blue', color: "white" }}>Users</MenuItem></Link>
                 <Link to='/useranalytic' > <MenuItem _focus={{ background: 'blue', color: "white" }}>Users Analytic</MenuItem></Link>
