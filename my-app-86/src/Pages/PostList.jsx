@@ -68,7 +68,7 @@ if(Loading){
       <Tr>
         <Th>ID</Th>
         <Th>CONTENT</Th>
-        <Th>Like Count</Th>
+       
         <Th>LIKE</Th>
         <Th >UNLIKE</Th>
         <Th>VIEW</Th>
@@ -84,11 +84,11 @@ if(Loading){
           return  <Tr key={el._id}>
             <Td>{el._id}</Td>
             <Td>{el.content}</Td>
-            <Td>{el.likes}</Td>
+            
             <Td><Button>LIKE</Button></Td>
             <Td><Button>UNLIKE</Button></Td>
             <Td><Button onClick={()=>navigate(`/allposts/${el._id}`)} >VIEW</Button></Td>
-            <Td><Button onClick={()=>navigate(`/allposts/edit/${el._id}`)}  >EDIT</Button></Td>
+            <Td><Button onClick={()=>navigate(`/posts/edit/${el._id}`)}  >EDIT</Button></Td>
             <Td><Button onClick={()=>handleDelete(el._id)}>DELETE</Button></Td>
           </Tr>
         })

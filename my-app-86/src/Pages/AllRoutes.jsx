@@ -17,10 +17,10 @@ export const AllRoutes = () => {
             <Route path='/addpost' element={<AddPost/>} />
             <Route path='/register' element={<SignupCard />} />
             <Route path='/login' element={<SimpleCard />} />
-            <Route path='/' element={<UserList />} />
-            {/* <Route path='/allusers' element={<UserList />} /> */}
+            <Route path='/' element={<PostList />} />
+            <Route path='/allusers' element={<UserList />} />
             <Route path='/useranalytic' element={<UserAnalytic />} />
-            <Route path='/allposts' element={<PostList />} />
+            {/* <Route path='/allposts' element={<PostList />} /> */}
             <Route path='/postanalytic' element={<PostAnalytic />} />
             <Route path='/allposts/:id' element={<SinglePost />} />
             <Route path='/allusers/:id' element={<SingleUser />} />

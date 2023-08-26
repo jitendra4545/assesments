@@ -7,14 +7,16 @@ export const SingleUser = () => {
   const {id}=useParams()
 console.log(id)
 const [SingleUser, setSingleUser] = useState([])
-
+const [loading,setLoading]=useState(false)
 const SingleData=async()=>{
-     axios.get(`https://calm-cyan-crow-kit.cyclic.cloud/users/${id}`)
+  setLoading(true)  
+  axios.get(`https://calm-cyan-crow-kit.cyclic.cloud/users/${id}`)
      .then((res)=>{
       setSingleUser(res.data)
-
+setLoading(false)
      }).catch((err)=>{
         console.log(err)
+        setLoading(false)
      })
 }
 

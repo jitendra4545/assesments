@@ -105,7 +105,7 @@ useEffect(()=>{
     axios.put(`https://calm-cyan-crow-kit.cyclic.cloud/users/${id}`,payload)
     .then((res)=>{
    console.log(res.data)
-   navigate('/')
+   navigate('/allusers')
     }).catch((err)=>{
         console.log(err)
     })
@@ -145,7 +145,9 @@ useEffect(()=>{
               
             <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input value={email} onChange={(e)=>setemail(e.target.value)} type="email" />
+           {
+            id? <Input disabled value={email} onChange={(e)=>setemail(e.target.value)} type="email" />:<Input value={email} onChange={(e)=>setemail(e.target.value)} type="email" />
+           }   
             </FormControl>
             <FormControl id="password" isRequired>
               <FormLabel >Bio</FormLabel>
@@ -183,11 +185,7 @@ useEffect(()=>{
                 }
               
             </Stack>
-            <Stack pt={6}>
-              <Text align={'center'}>
-                Already a user? <Link color={'blue.400'}>Login</Link>
-              </Text>
-            </Stack>
+            
           </Stack>
         </Box>
       </Stack>
