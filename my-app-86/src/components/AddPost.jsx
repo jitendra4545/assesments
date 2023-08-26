@@ -1,6 +1,7 @@
 import { Box, Button, Flex, FormControl, FormLabel, Heading, Input, Select, Stack, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useToast } from '@chakra-ui/react'
 import { useNavigate, useParams } from 'react-router-dom'
 export const AddPost = () => {
   const [content, setContent] = useState("")
@@ -10,6 +11,8 @@ export const AddPost = () => {
   const [loading, setloading] = useState(false)
   const navigate = useNavigate()
   const { id } = useParams()
+  const toast=useToast()
+  
   const getUser = async () => {
     setloading(true)
     axios.get(`https://calm-cyan-crow-kit.cyclic.cloud/analytics/users`)
@@ -51,6 +54,14 @@ export const AddPost = () => {
       .then((res) => {
         console.log(res.data)
         navigate('/')
+        toast({
+          title: ' Edited.',
+          description: "Post Edited Successfully",
+          status: 'success',
+          duration: 4000,
+          isClosable: true,
+          position:'top'
+        })
       }).catch((err) => {
         console.log(err)
       })
@@ -78,6 +89,14 @@ export const AddPost = () => {
         console.log(res.data)
         setloading(false)
         navigate('/')
+        toast({
+          title: ' Added.',
+          description: "Post Added Successfully",
+          status: 'success',
+          duration: 4000,
+          isClosable: true,
+          position:'top'
+        })
       }).catch((err => {
         console.log(err)
         setloading(false)

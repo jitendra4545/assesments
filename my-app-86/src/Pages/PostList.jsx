@@ -12,12 +12,13 @@ import {
     TableContainer,
   } from '@chakra-ui/react'
 import axios from 'axios'
+import { useToast } from '@chakra-ui/react'
 // import { PostAllLists } from '../components/PostAllLists'
 import { useNavigate } from 'react-router-dom'
 export const PostList = () => {
 const [posts,setPosts]=useState([])
 const navigate=useNavigate()
-
+const toast=useToast()
 const [Loading, setLoading] = useState(false)
 
     const getPost=async()=>{
@@ -47,6 +48,14 @@ axios.delete(`https://calm-cyan-crow-kit.cyclic.cloud/posts/${id}`)
     console.log(res.data)
     setLoading(false)
     getPost()
+    toast({
+      title: ' Deleted.',
+      description: "Post Deleted Successfully",
+      status: 'success',
+      duration: 4000,
+      isClosable: true,
+      position:'top'
+    })
 }).catch(err=>console.log(err))
 }
 
@@ -57,6 +66,14 @@ const handleLike=async(id)=>{
     console.log(res.data)
     setLoading(false)
     getPost()
+    toast({
+      title: 'Liked',
+      description: "Post Liked Successfully",
+      status: 'success',
+      duration: 4000,
+      isClosable: true,
+      position:'top'
+    })
   }).catch((err)=>{
     console.log(err)
     setLoading(false)
@@ -70,6 +87,14 @@ const handleunLike=async(id)=>{
     console.log(res.data)
     setLoading(false)
     getPost()
+    toast({
+      title: 'UnLiked',
+      description: "Post UnLiked Successfully",
+      status: 'success',
+      duration: 4000,
+      isClosable: true,
+      position:'top'
+    })
   }).catch((err)=>{
     console.log(err)
     setLoading(false)

@@ -19,6 +19,7 @@ import {
 import { useEffect, useState } from 'react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import axios from 'axios'
+import { useToast } from '@chakra-ui/react'
 import { useNavigate, useParams } from 'react-router-dom'
 export default function SignupCard() {
   const [showPassword, setShowPassword] = useState(false)
@@ -28,7 +29,7 @@ const naviagte=useNavigate()
   const [bio, setbio] = useState()
 const [Users, setUsers] = useState({})
 const [Loading, setLoading] = useState(false)
-
+const toast=useToast()
 
   const {id}=useParams()
 
@@ -54,6 +55,14 @@ const navigate=useNavigate()
        
         setLoading(false)
         navigate("/")
+        toast({
+          title: ' Added.',
+          description: "User Added Successfully",
+          status: 'success',
+          duration: 4000,
+          isClosable: true,
+          position:'top'
+        })
        }).catch((err)=>{
     setLoading(false)
         console.log(err)
@@ -108,6 +117,14 @@ useEffect(()=>{
     .then((res)=>{
    console.log(res.data)
    navigate('/allusers')
+   toast({
+    title: ' Edited.',
+    description: "Post Edited Successfully",
+    status: 'success',
+    duration: 4000,
+    isClosable: true,
+    position:'top'
+  })
     }).catch((err)=>{
         console.log(err)
     })

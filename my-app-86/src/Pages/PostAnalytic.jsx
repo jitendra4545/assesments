@@ -25,7 +25,7 @@ const getTopLike=()=>{
     axios.get(`https://calm-cyan-crow-kit.cyclic.cloud/analytics/posts/top-liked`)
     .then((res)=>{
        
-        // console.log(res.data)
+        
         setTopPosts(res.data)
         setLoading(false)
     }).catch(err=>console.log(err))

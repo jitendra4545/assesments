@@ -12,12 +12,15 @@ import {
     TableContainer,
   } from '@chakra-ui/react'
 import axios from 'axios'
+import { useToast } from '@chakra-ui/react'
 // import { PostAllLists } from '../components/PostAllLists'
 import { useNavigate } from 'react-router-dom'
 export const UserList = () => {
 const [Users,setUsers]=useState([])
 const navigate=useNavigate()
 const [loading, setloading] = useState(false)
+const toast = useToast()
+
     const getUser=async()=>{
         setloading(true)
         axios.get(`https://calm-cyan-crow-kit.cyclic.cloud/analytics/users`)
@@ -25,6 +28,7 @@ const [loading, setloading] = useState(false)
            setloading(false)
             // console.log(res.data)
             setUsers(res.data)
+          
         }).catch(err=>console.log(err))
 
     }
@@ -45,8 +49,16 @@ axios.delete(`https://calm-cyan-crow-kit.cyclic.cloud/users/${id}`)
 .then((res)=>{
     setloading(false)
     console.log(res.data)
-    alert('user deleted successfully')
+    
     getUser()
+    toast({
+      title: ' Deleted.',
+      description: "User Deleted Successfully",
+      status: 'success',
+      duration: 4000,
+      isClosable: true,
+      position:'top'
+    })
 }).catch(err=>console.log(err))
 }
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import SignupCard from '../components/Register'
-import SimpleCard from '../components/Login'
-import { HomePage } from './HomePage'
+// import SimpleCard from '../components/Login'
+// import { HomePage } from './HomePage'
 import { UserList } from './UserList'
 import { PostList } from './PostList'
 import { UserAnalytic } from './UserAnalytic'
@@ -16,7 +16,7 @@ export const AllRoutes = () => {
         <Routes>
             <Route path='/addpost' element={<AddPost/>} />
             <Route path='/register' element={<SignupCard />} />
-            <Route path='/login' element={<SimpleCard />} />
+           
             <Route path='/' element={<PostList />} />
             <Route path='/allusers' element={<UserList />} />
             <Route path='/useranalytic' element={<UserAnalytic />} />
