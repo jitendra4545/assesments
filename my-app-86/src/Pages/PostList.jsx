@@ -50,6 +50,32 @@ axios.delete(`https://calm-cyan-crow-kit.cyclic.cloud/posts/${id}`)
 }).catch(err=>console.log(err))
 }
 
+const handleLike=async(id)=>{
+  setLoading(false)
+  axios.post(`https://calm-cyan-crow-kit.cyclic.cloud/posts/${id}/like`)
+  .then((res)=>{
+    console.log(res.data)
+    setLoading(false)
+    getPost()
+  }).catch((err)=>{
+    console.log(err)
+    setLoading(false)
+  })
+}
+
+const handleunLike=async(id)=>{
+  setLoading(false)
+  axios.post(`https://calm-cyan-crow-kit.cyclic.cloud/posts/${id}/unlike`)
+  .then((res)=>{
+    console.log(res.data)
+    setLoading(false)
+    getPost()
+  }).catch((err)=>{
+    console.log(err)
+    setLoading(false)
+  })
+}
+
 
 if(Loading){
   return  <Heading>Loading........</Heading>
@@ -62,13 +88,14 @@ if(Loading){
 
   return (
     <Box>
+      <Heading m='40px'>All Posts</Heading>
 <TableContainer>
   <Table variant='simple'>
     <Thead>
       <Tr>
         <Th>ID</Th>
         <Th>CONTENT</Th>
-       
+       <Th>LIKE COUNT</Th>
         <Th>LIKE</Th>
         <Th >UNLIKE</Th>
         <Th>VIEW</Th>
@@ -84,9 +111,9 @@ if(Loading){
           return  <Tr key={el._id}>
             <Td>{el._id}</Td>
             <Td>{el.content}</Td>
-            
-            <Td><Button>LIKE</Button></Td>
-            <Td><Button>UNLIKE</Button></Td>
+            <Td>{el.likes}</Td>
+            <Td><Button onClick={()=>handleLike(el._id)}>LIKE</Button></Td>
+            <Td><Button onClick={()=>handleunLike(el._id)}>UNLIKE</Button></Td>
             <Td><Button onClick={()=>navigate(`/allposts/${el._id}`)} >VIEW</Button></Td>
             <Td><Button onClick={()=>navigate(`/posts/edit/${el._id}`)}  >EDIT</Button></Td>
             <Td><Button onClick={()=>handleDelete(el._id)}>DELETE</Button></Td>

@@ -57,7 +57,7 @@ function Navbar() {
             <Tabs color={'blue'} variant='solid-rounded'>
               <TabList gap='3' >
 
-                <Link to='/allposts'  ><Tab color={isscroll ? 'white' : "#02054B"} >Posts</Tab></Link>
+                <Link to='/register'  ><Tab color={isscroll ? 'white' : "#02054B"} >Add New User</Tab></Link>
                 <Link to='/postanalytic' ><Tab color={isscroll ? 'white' : "#02054B"} >Post Analytic</Tab></Link>
                 <Link to='/allusers' ><Tab color={isscroll ? 'white' : "#02054B"} >Users</Tab></Link>
                 <Link to='/useranalytic' ><Tab color={isscroll ? 'white' : "#02054B"} >User Analytic</Tab></Link>

@@ -60,6 +60,8 @@ const handleEdit=()=>{
 
   return (
     <Box>
+
+<Heading m='40px'>All Users</Heading>
 <TableContainer>
   <Table variant='simple'>
     <Thead>

@@ -51,7 +51,9 @@ const navigate=useNavigate()
        axios.post(`https://calm-cyan-crow-kit.cyclic.cloud/users`,payload)
        .then((res)=>{
         console.log(res.data)
+       
         setLoading(false)
+        navigate("/")
        }).catch((err)=>{
     setLoading(false)
         console.log(err)
@@ -125,7 +127,9 @@ useEffect(()=>{
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
           <Heading fontSize={'4xl'} textAlign={'center'}>
-          Register New User
+        {
+          id?"Update User":" Register New User"
+        } 
           </Heading>
           
         </Stack>
