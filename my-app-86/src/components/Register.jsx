@@ -48,7 +48,7 @@ const navigate=useNavigate()
         bio
     }
     setLoading(true)
-    // https://calm-cyan-crow-kit.cyclic.cloud/
+    
        axios.post(`https://calm-cyan-crow-kit.cyclic.cloud/users`,payload)
        .then((res)=>{
         console.log(res.data)
