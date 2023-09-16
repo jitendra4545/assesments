@@ -24,13 +24,11 @@ const userGetJobSuccess=(payload)=>{
 
 export const JobSearch=({Value})=>(dispatch)=>{
 
-    var url = "https://jooble.org/api/";
-var key = "00f7588e-56ce-4fca-aff4-08ac6bff8adf";
-var params = keywords=Value
+  
 
-      axios.post(url + key).then((res)=>{
-        console.log(res)
-        dispatch(userGetJobSuccess(res.data))
+      axios.get(`https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=1c600631&app_key=e4ca2c3482c42848461421865a796a17&what=${Value}`).then((res)=>{
+        console.log("job",res.data.results)
+        dispatch(userGetJobSuccess(res.data.results))
       }).catch(err=>console.log(err))
 }
 

@@ -1,4 +1,4 @@
-import { USER_LOGIN_SUCCESS, USER_SIGNUP_SUCCESS } from "./actionTypes"
+import { USER_JOB_SUCCESS, USER_LOGIN_SUCCESS, USER_SIGNUP_SUCCESS } from "./actionTypes"
 
 
 
@@ -18,6 +18,14 @@ export const reducer=(state=intitalState,action)=>{
 
     switch(type){
         case USER_SIGNUP_SUCCESS:
+
+
+        case USER_JOB_SUCCESS:{
+            return {
+                ...state,jobs:payload
+            }
+        }
+
  case USER_LOGIN_SUCCESS:{
     return {
         ...state,isAuth:true
