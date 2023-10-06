@@ -34,12 +34,12 @@ export const Navbar = () => {
       </Box>
       <Box  display={'flex'} justifyContent={'center'} alignItems={'center'}>
         <Box gap='7' fontSize={'lg'} color={isscroll ? "#003358" : "white"} fontWeight={isscroll ? "normal":"normal"} display={'flex'}  >
-          <Link><Text _hover={{ color: "white"}}>Home</Text></Link>
+          <Link><Text >Home</Text></Link>
 
           <Popover trigger="hover" >
             <PopoverTrigger>
               <Box display={'flex'}>
-                <Link><Text _hover={{ color: "white" }} >Industries </Text></Link>
+                <Link><Text  >Industries </Text></Link>
                 <Text mt='5px'><AiFillCaretDown /></Text>
               </Box>
 
@@ -50,21 +50,23 @@ export const Navbar = () => {
               <PopoverCloseButton />
               <PopoverHeader></PopoverHeader>
               <PopoverBody>
-
-                {
+         <Box display={'grid'} gap='6'>
+         {
                   inds_opt.map((el) => {
                     return <Text color={'black'}>{el}</Text>
                   })
                 }
+         </Box>
+                
 
               </PopoverBody>
             </PopoverContent>
           </Popover>
          
 
-          <Link><Text _hover={{ color: "white" }}>AI Software</Text></Link>
-          <Link><Text _hover={{ color: "white" }}>Blog</Text></Link>
-          <Link><Text _hover={{ color: "white" }}>Contact Us</Text></Link>
+          <Link><Text >AI Software</Text></Link>
+          <Link><Text >Blog</Text></Link>
+          <Link><Text>Contact Us</Text></Link>
 
         </Box>
       </Box>

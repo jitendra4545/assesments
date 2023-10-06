@@ -35,7 +35,7 @@ export const ProductCard = (el) => {
                     :
                     <Box>
 
-                        <Box display={'grid'} gridTemplateColumns={{ base: "repeat(1,1fr)", md: "repeat(1,1fr)", lg: "repeat(2,1fr)" }} gap='8'>
+                        <Box display={'grid'} gridTemplateColumns={{ base: "repeat(1,1fr)", md: "repeat(1,1fr)", lg: "repeat(2,1fr)" }} gap='12'>
 
 
                             <Box w='100%' >
