@@ -26,11 +26,11 @@ export const Navbar = () => {
     };
   }, []);
   return (
-    <Box bg={isscroll ? "blue" : ""} zIndex='1000' position='sticky' top='0px' p='5px 50px' border={'2px solid red'} display={'flex'} justifyContent={'space-between'}>
-      <Box w='180px' border={'2px solid red'} >
+    <Box bg={isscroll ? "blue" : ""} zIndex='1000' position='sticky' top='0px' p='5px 50px'  display={'flex'} justifyContent={'space-between'}>
+      <Box w='180px'  >
         <Image w='100%' src='https://ntwist.com/wp-content/uploads/2021/12/ntwistlight.png' />
       </Box>
-      <Box border={'2px solid red'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+      <Box  display={'flex'} justifyContent={'center'} alignItems={'center'}>
         <Box gap='7' fontSize={'lg'} color={isscroll ? "blue" : "white"} display={'flex'}  >
           <Link><Text _hover={{ color: "white" }}>Home</Text></Link>
 
