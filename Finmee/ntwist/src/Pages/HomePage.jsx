@@ -1,14 +1,16 @@
 import React from 'react'
 import { Navbar } from '../components/Navbar'
 import { Box, Button, Flex, Heading, Image } from '@chakra-ui/react'
+import { HomePageBody } from '../components/HomePageBody'
 
 export const HomePage = () => {
   return (
-    <Box>
-      <Box h='100vh' w='100%'
+    <Box >
+       
+      <Box  h='100vh' w='100%'
         backgroundImage={"https://ntwist.com/wp-content/uploads/2023/01/home-image-bg-v6.png"}
       >
-        <Navbar />
+       <Navbar/>
         <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
           <Box p='50px ' gap='6' display={'flex'} justifyContent={'space-evenly'} >
             <Box  display={'flex'} alignItems={'center'}>
@@ -26,6 +28,7 @@ export const HomePage = () => {
           </Box>
         </Box>
       </Box>
+      <HomePageBody/>
     </Box>
 
 

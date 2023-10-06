@@ -26,13 +26,15 @@ export const Navbar = () => {
     };
   }, []);
   return (
-    <Box bg={isscroll ? "blue" : ""} zIndex='1000' position='sticky' top='0px' p='5px 50px'  display={'flex'} justifyContent={'space-between'}>
+    <Box bg={isscroll ? "white" : ""} zIndex='1000' position='sticky' top='0px' p='5px 50px'  display={'flex'} justifyContent={'space-between'}>
       <Box w='180px'  >
-        <Image w='100%' src='https://ntwist.com/wp-content/uploads/2021/12/ntwistlight.png' />
+       {
+        isscroll ? <Image w='100%' src='https://ntwist.com/wp-content/uploads/2021/12/ntwist-logo-dark.png' />:<Image w='100%' src='https://ntwist.com/wp-content/uploads/2021/12/ntwistlight.png' />
+       } 
       </Box>
       <Box  display={'flex'} justifyContent={'center'} alignItems={'center'}>
-        <Box gap='7' fontSize={'lg'} color={isscroll ? "blue" : "white"} display={'flex'}  >
-          <Link><Text _hover={{ color: "white" }}>Home</Text></Link>
+        <Box gap='7' fontSize={'lg'} color={isscroll ? "#003358" : "white"} fontWeight={isscroll ? "normal":"normal"} display={'flex'}  >
+          <Link><Text _hover={{ color: "white"}}>Home</Text></Link>
 
           <Popover trigger="hover" >
             <PopoverTrigger>
