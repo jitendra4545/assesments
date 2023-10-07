@@ -1,53 +1,59 @@
-import { Box, Button, Input, InputGroup, InputLeftElement, Text } from '@chakra-ui/react'
-import React from 'react'
-import { HamburgerIcon } from '@chakra-ui/icons'
-import { BsGithub } from 'react-icons/bs'
-import { BiCaretDown, BiSearch } from 'react-icons/bi'
-import { FiChevronRight } from "react-icons/fi"
-export const Navbar = () => {
-    return (
-        <Box bg='#0D1117' p='15px 20px' justifyContent={'space-between'} display={'flex'} >
-            <Box display={'flex'} justifyContent={'center'} alignItems={'center'} >
-                <Box display={'flex'} alignItems={'center'} >
-                    <button style={{ border: '1px solid grey', padding: "3px 7px", borderRadius: "3px" }}><HamburgerIcon fontSize={'18px'} color={'#7D8590'} /></button>
-                    <Box ml='15px' gap='4' display={'flex'} alignItems={'center'} color='#E6EDF3'>
-                        <BsGithub fontSize={'30px'} color='#E6EDF3' />
-                        <Text fontWeight={'bold'} color='#E6EDF3'>Dashboard</Text>
-                    </Box>
+import { GiHamburgerMenu } from "react-icons/gi";
+import { BiSearch } from "react-icons/bi";
+import {
+  BiRightArrow,
+  BiSolidDownArrow,
+  BiGitPullRequest,
+} from "react-icons/bi";
+import { BsPlus, BsGithub } from "react-icons/bs";
+import { GoIssueOpened, GoCodespaces } from "react-icons/go";
 
-                </Box>
+const NavBar = () => {
+  return (
+    <div className="border-b-2   border-b-slate-600 flex justify-between items-center py-3 px-4 bg-[#010409] text-white">
+      <div className=" flex items-center gap-4">
+        <button className="border border-slate-500 p-[7px] rounded-md text-slate-500">
+          <GiHamburgerMenu />
+        </button>
+        <div className=" text-3xl">
 
-            </Box>
-            <Box display={'flex'} border={'1px solid red'}>
-                <InputGroup h='30px' border={'1px solid grey'}>
-                    <InputLeftElement h='30px' pointerEvents='none'>
-                        <BiSearch fontSize={'20px'} color={'#7D8590'} />
-                    </InputLeftElement>
+          <BsGithub />
+        </div>
+       
+        <button className="hover:bg-slate-900 px-3 rounded-md py-2">Dashboard</button>
+      </div>
+      {/* 2nd part */}
+      <div className=' flex items-center gap-3 text-slate-500 '>
+        <div className="flex content-center items-center border border-slate-500 gap-3 rounded-md px-2 py-1 cursor-pointer">
+          <BiSearch />
+          <input type="text" placeholder="Type / to search" className="bg-[#010409] cursor-pointer " />
+          <p >|</p>
+          <BiRightArrow />
+        </div>
+        <p>|</p>
+        <div className="hover:bg-slate-900  flex items-center gap-2 cursor-pointer border border-slate-500 p-[7px] rounded-md text-slate-500">
+          <div className="text-lg">
 
-                    <Input h='30px' type='text' placeholder='Type to search' />
-                </InputGroup>
-                <Box display={'flex'} alignItems={'center'} color={'#7D8590'} border={"1px solid grey"}>
-                    <FiChevronRight fontSize={'20px'} />_
-                </Box>
-                <Text color={'#7D8590'} ml='15px' mr='15px'>|</Text>
+            <BsPlus />
+          </div>
+          <div className="text-xs">
 
-                <Box display={'flex'} gap='2'>
-                    <Box fontSize={'20px'} display={'flex'} p='0px 4px' alignItems={'center'} color={'#7D8590'} border={"1px solid grey"}>
-                        +<BiCaretDown />
-                    </Box>
-                    <Box display={'flex'} alignItems={'center'} color={'#7D8590'} border={"1px solid grey"}>
-                        +<BiCaretDown />
-                    </Box>
-                    <Box  display={'flex'} alignItems={'center'} color={'#7D8590'} border={"1px solid grey"}>
-                        +<BiCaretDown />
-                    </Box>
-                    <Box display={'flex'} alignItems={'center'} color={'#7D8590'} border={"1px solid grey"}>
-                        +<BiCaretDown />
-                    </Box>
-                </Box>
+            <BiSolidDownArrow />
+          </div>
+        </div>
+        <button className=" hover:bg-slate-900  cursor-pointer border border-slate-500 p-[7px] rounded-md text-slate-500">
+          <GoIssueOpened />
+        </button>
+        <button className=" hover:bg-slate-900  cursor-pointer border border-slate-500 p-[7px] rounded-md text-slate-500">
+          <BiGitPullRequest />
+        </button>
+        <button className="hover:bg-slate-900 cursor-pointer border border-slate-500 p-[7px] rounded-md text-slate-500">
+          <GoCodespaces />
+        </button>
+        <img className="w-8 rounded-[50%]" src="https://avatars.githubusercontent.com/u/107980469?v=4" alt="" />
+      </div>
+    </div>
+  );
+};
 
-            </Box>
-
-        </Box>
-    )
-}
+export default NavBar;
