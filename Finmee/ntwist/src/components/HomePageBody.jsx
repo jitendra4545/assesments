@@ -30,7 +30,7 @@ const Data =
 
 export const HomePageBody = () => {
     return (
-        <Box m={'40px 0px'} >
+        <Box bg='white' m={'40px 0px'} >
             <Box w={{ base: "98%", md: "95%", lg: "90%" }} margin={'auto'} >
            <Box display={'grid'} gap={'10'}>
            {

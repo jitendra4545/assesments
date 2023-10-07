@@ -37,14 +37,18 @@ export const HomePage = () => {
 
 
   return (
-    <Box >
-
+    <Box  >
+ {/* <Image w='100%' h='100vh' objectFit={'cover'} src='https://ntwist.com/wp-content/uploads/2023/01/home-image-bg-v6.png' /> */}
       <Box
+       
         h='100vh'
         w='100vw'
-        backgroundImage={"https://ntwist.com/wp-content/uploads/2023/01/home-image-bg-v6.png"}
+        backgroundRepeat="no-repeat"
+          backgroundSize="cover"
+        backgroundImage="url(https://ntwist.com/wp-content/uploads/2023/01/home-image-bg-v6.png)"
       >
-        <Navbar />
+       
+      <Navbar/>
         <Button
           onClick={scrollToTop}
           display={isVisible ? "" : "none"}
@@ -61,7 +65,12 @@ export const HomePage = () => {
           border={'none'}
           outline={'none'}
         ><IoIosArrowUp /></Button>
-
+           
+           <Box>
+            <Box>
+              <Image rc='https://ntwist.com/wp-content/plugins/gtranslate/flags/svg/en.svg' />
+            </Box>
+           </Box>
 
 
 
@@ -82,6 +91,7 @@ export const HomePage = () => {
 
           </Box>
         </Box>
+       
       </Box>
       <HomePageBody />
       <Footer />
