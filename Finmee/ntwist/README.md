@@ -1,7 +1,7 @@
 # React + Vite
 
 
-Deployed Link :- (https://ntwist-dusky.vercel.app/)
+Deployed Link :- (https://ntwist-jitendra4545.vercel.app/)
 
 
 
